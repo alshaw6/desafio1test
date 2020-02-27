@@ -1,0 +1,32 @@
+{
+    "1": {
+        "id": "2",
+        "Nome do produto": "samsung s10",
+        "Descrição do produto": "preto",
+        "Preço": "4500"
+    },
+    "2": {
+        "id": "3",
+        "Nome do produto": "Iphone x",
+        "Descrição do produto": "silver",
+        "Preço": "5000"
+    },
+    "3": {
+        "id": "4",
+        "Nome do produto": "wawei",
+        "Descrição do produto": "preto",
+        "Preço": "1000"
+    },
+    "4": {
+        "id": "5",
+        "Nome do produto": "googlex",
+        "Descrição do produto": "white",
+        "Preço": "1200"
+    },
+    "5": {
+        "id": "6",
+        "Nome do produto": "sony",
+        "Descrição do produto": "all colors",
+        "Preço": "2000"
+    }
+}
