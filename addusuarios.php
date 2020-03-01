@@ -11,7 +11,7 @@
 </head>
 <body>
 
-    <div class="nav">
+<div class="nav">
         <ul class="nav-links">
             <li>Home</li>
             <li>Sobre nos</li>
@@ -28,7 +28,7 @@
     <p>camila@gmail.com</p> <button type="button" class="btn-danger">Excluir</button>
 
     <h3>Adicionar Usuarios</h3>
-    <form method="post" action="addusuarios.php" class="main-form">
+    <form method="post" action="signupenter.php" class="main-form">
         <div class="form-group">
             <label for="name">Nome</label>
             <input type="text" class="form-control">
@@ -43,7 +43,7 @@
         </div>
         <div class="form-group">
             <label for="exampleInputPassword1">confirmar senha</label>
-            <input type=" reconfirm password" class="form-control" id="exampleInputPassword1">
+            <input type="password_confirm" class="form-control" id="exampleInputPassword1">
         </div>
 
         <button type="button" class=" btn-primary btn-lg btn-block">adicionar</button>

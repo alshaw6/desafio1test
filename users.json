@@ -1,0 +1,36 @@
+[
+    {
+        "id": 1,
+        "username": "alvaro shaw",
+        "email": "deborabastos14@gmail.com",
+        "password":""
+    },
+    {
+        "id": 2,
+        "nome": "ana salguero",
+        "email": "tallitaduarte@gmail.com",
+        "password":""
+
+    },
+    {
+        "id": 3,
+        "nome": " pancho villa",
+        "email": "fefabastos@gmail.com",
+        "password":""
+
+    },
+    {
+        "id": 4,
+        "nome": " julio ceaser",
+        "email": "nice@gmail.com",
+        "password":""
+
+    },
+    {
+        "id": 5,
+        "nome": "tom cruse ",
+        "email": "lays@gmail.com",
+        "password":""
+
+    }
+]

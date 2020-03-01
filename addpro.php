@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,23 +8,48 @@
   <link href="style.css" rel="stylesheet">
   <title>AdicionarProduto</title>
 </head>
+
 <body>
 
-<?php
+  <?php
+  session_start();
+  $erros = [];
+  if (isset($_POST['adicionar'])) {
 
-if(isset($_POST['save'])){
-    $data = file_get_contents('pro.json');
-    $input = array(
-      'id' => $_POST['id'],
-      'nome' => $_POST['nome'],
-			'descricao' => $_POST['descricao'],
-      'preco' => $_POST['preco'],
-    );
-    $data[] = $input;
-    file_put_contents('pro.json', $data);
-    
-    header('location: listapro.php');
+
+
+    $produto = $_POST['produto'];
+    $preco = $_POST['preco'];
+
+    if (empty($_POST['produto'])) {
+      $erros[0] = $_SESSION['no product'] = "Add product";
+    }
+
+    if (empty($_POST['preco'])) {
+      $erros[1] = $_SESSION['no preco'] = "Add price";
+
+    } else if (!is_numeric($_POST['preco'])) {
+      $erros[2] = $_SESSION['empty'] = "numbers only";
+    }
   }
+
+
+  // <?php
+
+  // if(isset($_POST['save'])){
+  //     $data = file_get_contents('pro.json');
+  //     $input = array(
+  //       'id' => $_POST['id'],
+  //       'nome' => $_POST['nome'],
+  // 			'descricao' => $_POST['descricao'],
+  //       'preco' => $_POST['preco'],
+  //     );
+  //     $data[] = $input;
+  //     file_put_contents('pro.json', $data);
+
+  //     header('location: listapro.php');
+  //   }
+  //   
   ?>
 
 
@@ -40,16 +64,34 @@ if(isset($_POST['save'])){
 
   <h3>Adicionar Produto</h3>
   <form action="listapro.php">
+
     <div class="row">
       <div class="col">
         <p>nome</p>
         <input type="text" class="form-control">
+        <?php
+        if (!empty($_SESSION['no product'])) {
+          echo $erros[0];
+          unset($_SESSION['no product']);
+        }
+        ?>
       </div>
+
       <div class="col">
         <p>Preco</p>
         <input type="text" class="form-control">
+        <?php
+        if (!empty($_SESSION['no preco'])) {
+          echo $erros[2];
+          unset($_SESSION['no preco']);
+        } else if (!empty($_SESSION['no number'])) {
+          echo $erros[2];
+          unset($_SESSION['no number']);
+        }
+        ?>
       </div>
     </div>
+
     <div class="form-group">
       <br>
       <label for="exampleFormControlTextarea1">Descricao</label>
@@ -63,10 +105,5 @@ if(isset($_POST['save'])){
     <button type="button" class=" btn-primary btn-lg btn-block">adicionar</button>
 
   </form>
-
-
-
-
 </body>
-
 </html>
